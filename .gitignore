@@ -1,0 +1,17 @@
+# SwiftPM / Xcode
+.build/
+.swiftpm/
+/Packages/
+xcuserdata/
+DerivedData/
+*.xcodeproj/
+
+# Build products
+*.app
+*.zip
+*.dmg
+Scripts/AppIcon.icns
+Scripts/AppIcon.iconset/
+
+# macOS
+.DS_Store
