@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M4B Converter: MP3 to M4B audiobooks on Mac</title>
+  <meta name="description" content="Free Mac app that turns folders of audiobook MP3s into single, chaptered .m4b files for Apple Books, Audiobookshelf and other players. Every file is verified.">
+  <meta property="og:title" content="M4B Converter">
+  <meta property="og:description" content="Turn folders of MP3s into chaptered audiobooks. A free Mac app.">
+  <meta property="og:image" content="https://m4bapp.com/screenshot.png">
+  <meta property="og:url" content="https://m4bapp.com/">
+  <link rel="canonical" href="https://m4bapp.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="bar">
+      <a class="by" href="https://github.com/GreenglassT">GreenglassT</a>
+      <nav>
+        <a href="https://github.com/GreenglassT/M4BConverter">Source</a>
+        <a href="https://ko-fi.com/greenglasst">Ko-fi</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="opening">
+        <div class="cover" aria-hidden="true">
+          <div class="spines"><i></i><i></i><i></i><i></i></div>
+          <div>
+            <div class="cover-title">M4B Converter</div>
+            <div class="cover-by">GreenglassT</div>
+          </div>
+        </div>
+        <div class="title-page">
+          <h1>M4B Converter</h1>
+          <p class="subtitle">Turn folders of MP3s into chaptered audiobooks. A free Mac app.</p>
+          <div class="actions">
+            <a class="button" href="https://github.com/GreenglassT/M4BConverter/releases/latest/download/M4BConverter.zip">Download for Mac</a>
+            <a href="https://github.com/GreenglassT/M4BConverter">Read the source</a>
+          </div>
+          <p class="fineprint">Version 1.0, signed and notarized by Apple. For Apple silicon Macs on macOS 14 or later. Needs ffmpeg. Free and open source under the MIT license.</p>
+        </div>
+      </div>
+
+      <figure class="shot">
+        <img src="screenshot.png" width="2080" height="1360" alt="M4B Converter with four books in the queue and one book's ten chapters open for editing.">
+      </figure>
+
+      <section class="contents" aria-labelledby="contents">
+        <h2 id="contents">Contents</h2>
+        <ol class="toc">
+          <li><div class="entry">Converts in batches <time>0:00:00</time></div><p>A folder of MP3s is one book. A folder of folders is several, and three convert at a time.</p></li>
+          <li><div class="entry">Makes real chapters <time>0:14:32</time></div><p>From OverDrive markers, one per file, or a filename pattern. Rename, retime, split or merge any of them before converting.</p></li>
+          <li><div class="entry">Fills in the details <time>0:31:07</time></div><p>Title, author and year come from the MP3 tags, and the cover from an image in the folder. Fix anything before it's written.</p></li>
+          <li><div class="entry">Checks every file it makes <time>0:48:55</time></div><p>Each .m4b is measured again afterwards. A book isn't marked done unless its chapters and length match the plan.</p></li>
+          <li><div class="entry">Audits the books you have <time>1:06:18</time></div><p>Point it at existing .m4b files to find ones that are cut short or damaged.</p></li>
+        </ol>
+      </section>
+
+      <div class="after">
+        <section aria-labelledby="start">
+          <h2 id="start">Getting started</h2>
+          <ol class="steps">
+            <li>Download the zip, open it, and drag M4B Converter into Applications.</li>
+            <li>Install ffmpeg, which does the encoding. With <a href="https://brew.sh">Homebrew</a>:
+              <pre><code>brew install ffmpeg</code></pre>
+            </li>
+            <li>Open the app and drop a folder of MP3s on the window. Check the chapters, then press Convert All (the play button).</li>
+          </ol>
+        </section>
+        <section aria-labelledby="questions">
+          <h2 id="questions">Questions</h2>
+          <dl class="faq">
+            <dt>Where do the finished files go?</dt>
+            <dd>Next to the folder each book came from, unless you pick one folder for everything in Settings.</dd>
+            <dt>Will it delete my MP3s?</dt>
+            <dd>No. After a book converts and checks out, you can choose to move its MP3 folder to the Trash. It always asks first, and it never deletes anything outright.</dd>
+            <dt>Does it need the internet?</dt>
+            <dd>No. It has no account, no tracking, and makes no network connections.</dd>
+          </dl>
+        </section>
+      </div>
+
+      <div class="tip">
+        <p>If it saved you an evening of fiddling with chapter files, you can buy me a coffee.</p>
+        <a class="button" href="https://ko-fi.com/greenglasst">Tip on Ko-fi</a>
+      </div>
+    </main>
+
+    <footer>
+      <p>Made by <a href="https://github.com/GreenglassT">GreenglassT</a>.</p>
+      <p>Also free: <a href="https://github.com/GreenglassT/SpoolBridge">SpoolBridge</a>, automatic filament inventory for Bambu Lab printers.</p>
+    </footer>
+  </div>
+</body>
+</html>
