@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>M4B Converter: MP3 to M4B audiobooks on Mac</title>
-  <meta name="description" content="Free Mac app that turns folders of audiobook MP3s into single, chaptered .m4b files for Apple Books, Audiobookshelf and other players. Every file is verified.">
+  <title>M4B Converter: free MP3 to M4B audiobook converter for Mac</title>
+  <meta name="description" content="Free Mac app that converts folders of MP3 audiobooks into chaptered M4B files for Apple Books, Audiobookshelf and other players. Every file is checked.">
   <meta property="og:title" content="M4B Converter">
   <meta property="og:description" content="Turn folders of MP3s into chaptered audiobooks. A free Mac app.">
   <meta property="og:image" content="https://m4bapp.com/screenshot.png">
@@ -17,6 +17,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "M4B Converter", "description": "Free Mac app that converts folders of MP3 audiobooks into chaptered M4B files, and checks every file it makes.", "applicationCategory": "MultimediaApplication", "operatingSystem": "macOS 14 or later, Apple silicon", "softwareVersion": "1.0", "url": "https://m4bapp.com/", "downloadUrl": "https://github.com/GreenglassT/M4BConverter/releases/latest/download/M4BConverter.zip", "image": "https://m4bapp.com/screenshot.png", "screenshot": "https://m4bapp.com/screenshot.png", "license": "https://opensource.org/licenses/MIT", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Person", "name": "GreenglassT", "url": "https://github.com/GreenglassT"}, "sameAs": ["https://github.com/GreenglassT/M4BConverter"]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert MP3 to M4B on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Drop the folder of MP3s on M4B Converter, check the chapters, and press Convert All. It writes one .m4b file with chapters, title, author and cover, using ffmpeg to do the encoding."}}, {"@type": "Question", "name": "Will the M4B work in Apple Books and Audiobookshelf?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The files have standard chapter markers and tags, so Apple Books, Audiobookshelf and other audiobook players show the chapters and details."}}, {"@type": "Question", "name": "Where do the finished files go?", "acceptedAnswer": {"@type": "Answer", "text": "Next to the folder each book came from, unless you pick one folder for everything in Settings."}}, {"@type": "Question", "name": "Will it delete my MP3s?", "acceptedAnswer": {"@type": "Answer", "text": "No. After a book converts and checks out, you can choose to move its MP3 folder to the Trash. It always asks first, and it never deletes anything outright."}}, {"@type": "Question", "name": "Does it need the internet?", "acceptedAnswer": {"@type": "Answer", "text": "No. It has no account, no tracking, and makes no network connections."}}]}</script>
 </head>
 <body>
   <div class="wrap">
@@ -77,6 +79,10 @@
         <section aria-labelledby="questions">
           <h2 id="questions">Questions</h2>
           <dl class="faq">
+            <dt>How do I convert MP3 to M4B on a Mac?</dt>
+            <dd>Drop the folder of MP3s on M4B Converter, check the chapters, and press Convert All. It writes one .m4b file with chapters, title, author and cover, using ffmpeg to do the encoding.</dd>
+            <dt>Will the M4B work in Apple Books and Audiobookshelf?</dt>
+            <dd>Yes. The files have standard chapter markers and tags, so Apple Books, Audiobookshelf and other audiobook players show the chapters and details.</dd>
             <dt>Where do the finished files go?</dt>
             <dd>Next to the folder each book came from, unless you pick one folder for everything in Settings.</dd>
             <dt>Will it delete my MP3s?</dt>
