@@ -8,19 +8,22 @@ CONFIG="${1:-release}"
 # Overridable from the environment:
 #   BUNDLE_ID      bundle identifier (default io.github.greenglasst.m4bconverter)
 #   VERSION        CFBundleShortVersionString (default 1.0)
-#   BUILD_NUMBER   CFBundleVersion (default 1)
+#   BUILD_NUMBER   CFBundleVersion (default 2)
 #   SIGN_IDENTITY  codesign identity. Default "-" signs ad hoc, which runs on the
 #                  machine that built it. A "Developer ID Application" identity (name
 #                  or SHA-1) also turns on the hardened runtime and a secure
 #                  timestamp, which notarization requires.
 BUNDLE_ID="${BUNDLE_ID:-io.github.greenglasst.m4bconverter}"
 VERSION="${VERSION:-1.0}"
-BUILD_NUMBER="${BUILD_NUMBER:-1}"
+BUILD_NUMBER="${BUILD_NUMBER:-2}"
 SIGN_IDENTITY="${SIGN_IDENTITY:--}"
 
 echo "Building ($CONFIG)…"
-swift build -c "$CONFIG" --package-path "$ROOT"
-BIN="$(swift build -c "$CONFIG" --package-path "$ROOT" --show-bin-path)"
+# The prefix map rewrites the source paths Swift embeds (#filePath, debug info) so the
+# binary doesn't carry this Mac's folder layout.
+SWIFT_FLAGS=(-Xswiftc -file-prefix-map -Xswiftc "$ROOT=.")
+swift build -c "$CONFIG" --package-path "$ROOT" "${SWIFT_FLAGS[@]}"
+BIN="$(swift build -c "$CONFIG" --package-path "$ROOT" "${SWIFT_FLAGS[@]}" --show-bin-path)"
 
 # Drawn from source every build rather than committed as a binary, so the icon stays
 # reviewable as a diff. Two seconds, and it keeps the .icns out of git.
@@ -31,6 +34,10 @@ iconutil -c icns "$ROOT/Scripts/AppIcon.iconset" -o "$ROOT/Scripts/AppIcon.icns"
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$BIN/M4BConverter" "$APP/Contents/MacOS/M4BConverter"
+# Drop the debug map, which still names every object file in the build folder.
+if [ "$CONFIG" = "release" ]; then
+  strip -S "$APP/Contents/MacOS/M4BConverter"
+fi
 cp "$ROOT/Scripts/AppIcon.icns" "$APP/Contents/Resources/AppIcon.icns"
 
 cat > "$APP/Contents/Info.plist" <<PLIST
